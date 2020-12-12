@@ -12,9 +12,10 @@
 */
 
 
-Route::get('/dashboard','UserController@index')->name('user.dashboard');
-Route::get('/data-pengajuan','UserController@show')->name('user.dataPengajuan');
-Route::get('/tambah-pengajuan','UserController@create')->name('user.tambahPengajuan');
+Route::get('/dashboard','PengajuanController@index')->name('user.dashboard');
+Route::get('/data-pengajuan','PengajuanController@show')->name('user.dataPengajuan');
+Route::get('/tambah-pengajuan','PengajuanController@create')->name('user.tambahPengajuan');
+Route::post('/pengajuan','PengajuanController@store')->name('guru.store');
 
 Route::get('/', 'HomeController@index')->name('welcome');
 

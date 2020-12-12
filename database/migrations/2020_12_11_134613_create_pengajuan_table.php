@@ -21,21 +21,21 @@ class CreatePengajuanTable extends Migration
             $table->unsignedBigInteger('periode_id');
             $table->foreign('periode_id')
             ->references('id')->on('periode')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('pendidikan_terakhir')->nullable();
+            $table->string('jurusan')->nullable();
+            $table->string('tahun_lulus', 10)->nullable();
+            $table->string('pangkat_golongan')->nullable();
+            $table->date('tmt')->nullable();
+            $table->string('gol_bulan')->nullable();
+            $table->string('gol_tahun')->nullable();
+            $table->date('awal_penilaian')->nullable();
+            $table->string('jenis_guru')->nullable();
+            $table->string('tugas')->nullable();
+            $table->string('alamat_sekolah')->nullable();
+            $table->string('kec_sekolah')->nullable();
+            $table->string('kab_sekolah')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
-            $table->string('pendidikan_terakhir');
-            $table->string('jurusan');
-            $table->string('tahun_lulus', 10);
-            $table->string('pangkat_golongan');
-            $table->date('tmt');
-            $table->string('gol_bulan');
-            $table->string('gol_tahun');
-            $table->date('awal_penilaian');
-            $table->string('jenis_guru');
-            $table->string('tugas');
-            $table->string('alamat_sekolah');
-            $table->string('kec_sekolah');
-            $table->string('kab_sekolah');
-            $table->integer('status');
         });
     }
 

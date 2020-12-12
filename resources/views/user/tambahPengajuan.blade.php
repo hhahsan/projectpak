@@ -4,7 +4,9 @@
 <div class="card card-primary">
     <!-- /.card-header -->
   <!-- form start -->
-  <form role="form">
+  <form method="POST" action="{{ route('guru.store')}}" role="form">
+    @csrf
+    
     <div class="card-body">
       <div class="text-center">
         <h4 class="text-primary">TAMBAH PENGAJUAN PAK</h4>
@@ -15,39 +17,39 @@
       
       <div class="form-group">
         <label for="pendidikanTerakhir">Pendidikan Terakhir</label>
-        <select class="custom-select form-control-border border-width-2" id="pendidikanTerakhir">
+        <select name="pendidikan_terakhir" class="custom-select form-control-border border-width-2" id="pendidikanTerakhir">
           <option></option>
-          <option>Tidak Sekolah</option>
-          <option>PAUD</option>
-          <option>TK / sederajat</option>
-          <option>Putus SD</option>
-          <option>SD / sederajat</option>
-          <option>SMP / sederajat</option>
-          <option>SMA / sederajat</option>
-          <option>Paket A</option>
-          <option>Paket B</option>
-          <option>Paket C</option>
-          <option>DI / AI</option>
-          <option>DII / AII</option>
-          <option>DIII / AIII</option>
-          <option>DIV</option>
-          <option>S1 / AIV</option>
-          <option>S2</option>
-          <option>S3</option>
-          <option>Lainnya</option>
+          <option value="Tidak Sekolah">Tidak Sekolah</option>
+          <option value="PAUD">PAUD</option>
+          <option value="TK / sederajat">TK / sederajat</option>
+          <option value="Putus SD">Putus SD</option>
+          <option value="SD / sederajat">SD / sederajat</option>
+          <option value="SMP / sederajat">SMP / sederajat</option>
+          <option value="SMA / sederajat">SMA / sederajat</option>
+          <option value="Paket A">Paket A</option>
+          <option value="Paket B">Paket B</option>
+          <option value="Paket C">Paket C</option>
+          <option value="DI / AI">DI / AI</option>
+          <option value="DII / AII">DII / AII</option>
+          <option value="DIII / AIII">DIII / AIII</option>
+          <option value="DIV">DIV</option>
+          <option value="S1 / AIV">S1 / AIV</option>
+          <option value="S2">S2</option>
+          <option value="S3">S3</option>
+          <option value="Lainnya">Lainnya</option>
         </select>
       </div>
       <div class="form-group">
         <label for="pendidikanJurusan">Pendidikan Jurusan</label>
-        <input type="text" class="form-control form-control-border border-width-2" id="pendidikanJurusan" placeholder="Pendidikan Jurusan">
+        <input name="jurusan" type="text" class="form-control form-control-border border-width-2" id="pendidikanJurusan" placeholder="Pendidikan Jurusan">
       </div>
       <div class="form-group">
         <label for="tahunLulus">Tahun Lulus</label>
-        <input type="text" class="form-control form-control-border border-width-2" id="tahunLulus" placeholder="Tahun Lulus">
+        <input name="tahun_lulus" type="text" class="form-control form-control-border border-width-2" id="tahunLulus" placeholder="Tahun Lulus">
       </div>
       <div class="form-group">
         <label for="pangkat">Pangkat & Golongan</label>
-        <select class="custom-select form-control-border border-width-2" id="pangkat">
+        <select name="pangkat_golongan" class="custom-select form-control-border border-width-2" id="pangkat">
           <option>-- Pangkat & Golongan --</option>
           <option value="Pengatur Muda - II/a">Pengatur Muda - II/a</option>
           <option value="Pengatur Muda Tk.I - II/b">Pengatur Muda Tk.I - II/b</option>
@@ -64,7 +66,7 @@
       <div class="form-group">
         <label for="tmt">TMT Pangkat & Golongan</label>
         <div class="input-group date" id="reservationdate" data-target-input="nearest">
-          <input type="text" class="date form-control form-control-border border-width-2" id="tmt" placeholder="TMT Pangkat & Golongan">
+          <input name="tmt" type="text" class="date form-control form-control-border border-width-2" id="tmt" placeholder="TMT Pangkat & Golongan">
           <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
           </div>
         </div>
@@ -73,52 +75,52 @@
         <label for="tahunLulus">Masa Kerja Golongan</label>
         <div class="row">
             <div class="col-3">
-              <input type="text" class="form-control form-control-border border-width-2" placeholder="--Tahun--">
+              <input name="gol_tahun" type="text" class="form-control form-control-border border-width-2" placeholder="--Tahun--">
             </div>
             <div class="col-6">
-              <input type="text" class="form-control form-control-border border-width-2" placeholder="--Bulan--">
+              <input name="gol_bulan" type="text" class="form-control form-control-border border-width-2" placeholder="--Bulan--">
             </div>
           </div>
       </div>
       <div class="form-group">
         <label for="penilaian">Masa Penilaian Awal</label>
         <div class="input-group date" id="reservationdate" data-target-input="nearest">
-          <input type="text" class="date form-control form-control-border border-width-2" id="penilaian" placeholder="Masa Penilaian Awal" autocomplete=’off’>
+          <input name="awal_penilaian" type="text" class="date form-control form-control-border border-width-2" id="penilaian" placeholder="Masa Penilaian Awal" autocomplete=’off’>
           <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
           </div>
         </div>
       </div>
       <div class="form-group">
         <label for="jenisGuru">Jenis Guru</label>
-        <select class="custom-select form-control-border border-width-2" id="jenisGuru">
+        <select name="jenis_guru" class="custom-select form-control-border border-width-2" id="jenisGuru">
           <option>-- Pangkat & Golongan --</option>
-          <option value="">Guru Kelas</option>
-          <option value="">Guru Mata Pelajaran</option>
-          <option value="">Guru Bimbingan Konseling</option>
-          <option value="">Guru Pendamping</option>
-          <option value="">Guru Magang</option>
-          <option value="">Guru TIK </option>
-          <option value="">Laboran</option>
-          <option value="">Pustakawan</option>
-          <option value="">Lainnya</option>
+          <option value="Guru Kelas">Guru Kelas</option>
+          <option value="Guru Mata Pelajaran">Guru Mata Pelajaran</option>
+          <option value="Guru Bimbingan Konseling">Guru Bimbingan Konseling</option>
+          <option value="Guru Pendamping">Guru Pendamping</option>
+          <option value="Guru Magang">Guru Magang</option>
+          <option value="Guru TIK">Guru TIK</option>
+          <option value="Laboran">Laboran</option>
+          <option value="Pustakawan">Pustakawan</option>
+          <option value="Lainnya">Lainnya</option>
         </select>
       </div>
       <div class="form-group">
         <label for="tugas">Tugas</label>
-        <input type="text" class="form-control form-control-border border-width-2" id="tugas" placeholder="Tugas">
+        <input name="tugas" type="text" class="form-control form-control-border border-width-2" id="tugas" placeholder="Tugas">
       </div>
       <div class="form-group">
         <label class="text-center">Almat Sekolah</label> 
         <div class="card-body">
           <div class="row">
             <div class="col-3">
-              <input type="text" class="form-control form-control-border border-width-2" placeholder="Sekolah">
+              <input name="alamat_sekolah" type="text" class="form-control form-control-border border-width-2" placeholder="Sekolah">
             </div>
             <div class="col-6">
-              <input type="text" class="form-control form-control-border border-width-2" placeholder="Kecamatan">
+              <input name="kec_sekolah" type="text" class="form-control form-control-border border-width-2" placeholder="Kecamatan">
             </div>
             <div class="col-3">
-              <input type="text" class="form-control form-control-border border-width-2" placeholder="Kabupaten"> 
+              <input name="kab_sekolah" type="text" class="form-control form-control-border border-width-2" placeholder="Kabupaten"> 
             </div>
           </div>
         </div>

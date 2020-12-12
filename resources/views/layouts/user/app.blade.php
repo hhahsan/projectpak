@@ -106,7 +106,7 @@
 <script src="{{ asset('js/bootstrap-datepicker.js') }}""></script>
 <script>
   $('.date').datepicker({
-    format: 'dd/mm/yyyy',
+    format: 'yyyy/mm/dd',
     autoclose: 'true'
   })
 </script>

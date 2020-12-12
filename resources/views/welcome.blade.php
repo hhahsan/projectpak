@@ -30,6 +30,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <h1 class="nav-title">SIP PAK Guru</h1>
             <p class="nav-title">Sistem Informasi Pengajuan Penilaian Angka Kredit Guru</p>
           </li>
+           <!-- Authentication Links -->
+           @guest
+           <li class="nav-item">
+               <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+           </li>
+           @if (Route::has('register'))
+               <li class="nav-item">
+                   <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+               </li>
+           @endif
+       @else
+           <li class="nav-item dropdown">
+               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                   {{ Auth::user()->name }} <span class="caret"></span>
+               </a>
+
+               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                   <a class="dropdown-item" href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                       {{ __('Logout') }}
+                   </a>
+
+                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                       @csrf
+                   </form>
+               </div>
+           </li>
+       @endguest
         </ul>
 
         
@@ -75,7 +104,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               </div>
               
-            <a href="/login" class="card-footer text-navy">Klik untuk Login  <i class="fas fa-arrow-circle-right"></i></a> 
+            <a href="{{ route('login') }}" class="card-footer text-navy">Klik untuk Login  <i class="fas fa-arrow-circle-right"></i></a> 
     
             </div>
 
@@ -88,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
                 
               </div>
-              <a href="/registrasi1" class="card-footer text-navy">Klik untuk membuat akun  <i class="fas fa-arrow-circle-right"></i></a> 
+              <a href="{{ route('register') }}" class="card-footer text-navy">Klik untuk membuat akun  <i class="fas fa-arrow-circle-right"></i></a> 
             </div><!-- /.card -->
           </div>
           
