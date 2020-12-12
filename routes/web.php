@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/dashboard','UserController@index')->name('user.dashboard');
+Route::get('/data-pengajuan','UserController@show')->name('user.dataPengajuan');
+Route::get('/tambah-pengajuan','UserController@create')->name('user.tambahPengajuan');
+
+Route::get('/', 'HomeController@index')->name('welcome');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

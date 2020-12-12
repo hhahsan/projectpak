@@ -1,100 +1,140 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Top Navigation</title>
 
-        <title>Laravel</title>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <div class="container">
+      
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <h1 class="nav-title">SIP PAK Guru</h1>
+            <p class="nav-title">Sistem Informasi Pengajuan Penilaian Angka Kredit Guru</p>
+          </li>
+        </ul>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        
+      </div>
 
-            .full-height {
-                height: 100vh;
-            }
+    
+    </div>
+  </nav>
+  <!-- /.navbar -->
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
-            .position-ref {
-                position: relative;
-            }
+    <!-- Main content -->
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+            <div class="card mt-3">
+              <div class="card-body bg-maroon">
+              
+                <h4 class="card-text">  Sudah punya akun?</h4>
+                <hr color="white">
+                <p class="card-text">
+                    Jika anda sudah mendaftar (memiliki akun), silahkan login dengan akun yang sudah anda daftarkan.
+                </p>
+                
 
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+              </div>
+              
+            <a href="/login" class="card-footer text-navy">Klik untuk Login  <i class="fas fa-arrow-circle-right"></i></a> 
+    
             </div>
+
+            <div class="card mt-5">
+              <div class="card-body bg-lightblue">
+                <h4 class="card-text"> Belum punya akun?</h4>
+                <hr color="white">
+                <p class="card-text">
+                  Jika anda belum pernah mendaftar di aplikasi ini, silahkan mengikuti proses pembuatan akun untuk dapat mengajukan PAK.
+                </p>
+                
+              </div>
+              <a href="/registrasi1" class="card-footer text-navy">Klik untuk membuat akun  <i class="fas fa-arrow-circle-right"></i></a> 
+            </div><!-- /.card -->
+          </div>
+          
+          <!-- /.col-md-6 -->
+          <div class="col-md-6 ">
+            <div class="card" style="width: 900px">
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <img
+                    src="{{ asset('img/logo_dinas.png')}}"
+                    alt="Dinas Pendidikan Ponorogo"
+                    style="padding-top: 5%; padding-left: 37%;"
+                  />
+                  <h2 style="text-align: center;">
+                    Dinas Pendidikan <br />
+                    Kabupaten Ponorogo
+                  </h2>
+                </div>
+                <!-- /.card-body -->
+              </div>
+          </div>
+          <!-- /.col-md-6 -->
         </div>
-    </body>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer" style="height: 310px">
+    
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
+</body>
 </html>
