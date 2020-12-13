@@ -3,31 +3,53 @@
 namespace App\Http\Controllers;
 
 use App\Pengajuan;
+use App\Periode;
+use App\User;
 use Illuminate\Http\Request;
 
 class PengajuanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('user.dashboard');
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('user.dataPengajuan');
+        $detail = Pengajuan::find($id);
+        
+
+        return view('user.detail',compact('detail'));
+    }
+
+    public function dataPengajuan()
+    {
+    
+        $datas = Pengajuan::with(['user.profil','periode.pengajuan'])->get();
+        
+
+        return view('user.dataPengajuan',compact('datas'));
     }
 
     public function create()
     {  
         
-        return view('user.tambahPengajuan');
+        return view('user.tambahPengajuan', [
+            'periode' => Periode::orderBy('id','desc')->limit('1')->get(),
+        ]);
     }
 
     public function store(Request $request)
     {
+        
         $pengajuan = new Pengajuan;
-        $pengajuan->user_id = '1';
-        $pengajuan->periode_id = '2';
+        $pengajuan->user_id = auth()->id();
+        $pengajuan->periode_id = $request->periode_id;
         $pengajuan->pendidikan_terakhir = $request->pendidikan_terakhir;
         $pengajuan->jurusan = $request->jurusan;
         $pengajuan->tahun_lulus = $request->tahun_lulus;

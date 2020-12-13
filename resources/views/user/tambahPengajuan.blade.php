@@ -1,4 +1,4 @@
-@extends('layouts.user.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="card card-primary">
@@ -14,11 +14,15 @@
         <hr>
       </div>
       
-      
+      <div class="form-group">
+        @foreach ($periode as $item)
+        <input name="periode_id" type="text" class="form-control form-control-border border-width-2" value="{{ $item->id }}" hidden>
+        @endforeach
+      </div>
       <div class="form-group">
         <label for="pendidikanTerakhir">Pendidikan Terakhir</label>
         <select name="pendidikan_terakhir" class="custom-select form-control-border border-width-2" id="pendidikanTerakhir">
-          <option></option>
+          <option disabled selected>-- Pendidikan terakhir --</option>
           <option value="Tidak Sekolah">Tidak Sekolah</option>
           <option value="PAUD">PAUD</option>
           <option value="TK / sederajat">TK / sederajat</option>

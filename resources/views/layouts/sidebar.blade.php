@@ -1,9 +1,8 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
-    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">AdminLTE 3</span>
+  <a href="{{route('user.dashboard')}}" class="brand-link">
+    <span class="brand-text font-weight-light">SIP PAK guru</span>
   </a>
 
   <!-- Sidebar -->
@@ -17,7 +16,7 @@
         
         <li class="nav-header">Dashboard</li>
         <li class="nav-item">
-          <a href="/dashboard" class="nav-link">
+          <a href="{{route('user.dashboard')}}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -25,7 +24,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/data-pengajuan" class="nav-link">
+          <a href="{{route('user.dataPengajuan')}}" class="nav-link">
             <i class="nav-icon fas fa-book"></i>
             <p>
               Data Pengajuan
@@ -33,7 +32,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/tambah-pengajuan" class="nav-link">
+          <a href="{{route('user.tambahPengajuan')}}" class="nav-link">
             <i class="nav-icon far fa-plus-square"></i>
             <p>
               Tambah Pengajuan
@@ -42,7 +41,7 @@
         </li>
         <li class="nav-header">Profil</li>
         <li class="nav-item">
-          <a href="iframe.html" class="nav-link">
+          <a href="{{route('profil')}}" class="nav-link">
             <i class="nav-icon fas fa-ellipsis-h"></i>
             <p>Profil</p>
           </a>

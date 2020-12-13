@@ -49,7 +49,11 @@
         </li>
         <li class="nav-header">Keluar</li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a  href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">
+           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
             <i class="nav-icon far fa-circle text-danger"></i>
             <p>Keluar</p>
           </a>

@@ -1,4 +1,4 @@
-@extends('layouts.user.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="row">
@@ -14,40 +14,31 @@
             <tr>
               <th>No</th>
               <th>Nama</th>
-              <th>Tanggal Pengajuan</th>
+              <th>Masa Penilaian</th>
               <th>Status</th>
-              <th>Aksi</th>
+              <th class="text-center">Aksi</th>
             </tr>
           </thead>
           <tbody>
+            
+                
+            
+            @foreach ($datas as $data)
+            @if(auth()->user()->id == $data->user_id)
             <tr>
-              <td>183</td>
-              <td>John Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="tag tag-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+              <td>1</td>
+              <td>{{ $data->user->nip}}</td>
+              <td>{{ $data->periode->periode}}</td>
+              <td><span class="badge badge-success">Diterima</span></td>
+              <td class="text-center"> 
+                <a href="{{ route('user.detail', $data->id )}}" type="button" class="btn btn-info btn-sm" style="border-radius: 8px"><i class="fas fa-info"></i> Detail</a>
+                ||
+                <a href="#" type="button" class="btn btn-primary btn-sm" style="border-radius: 8px"><i class="fas fa-print"></i> Cetak</a>
+              </td>
             </tr>
-            <tr>
-              <td>219</td>
-              <td>Alexander Pierce</td>
-              <td>11-7-2014</td>
-              <td><span class="tag tag-warning">Pending</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>657</td>
-              <td>Bob Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="tag tag-primary">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>175</td>
-              <td>Mike Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="tag tag-danger">Denied</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
+            @endif
+            @endforeach
+            
           </tbody>
         </table>
       </div>
