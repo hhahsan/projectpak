@@ -22,8 +22,6 @@ class PengajuanController extends Controller
     public function show($id)
     {
         $detail = Pengajuan::find($id);
-        
-
         return view('user.detail',compact('detail'));
     }
 

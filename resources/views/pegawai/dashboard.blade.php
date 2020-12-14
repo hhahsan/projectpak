@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.pegawai.app')
 
 @section('content')
 <div class="row">
@@ -8,7 +8,7 @@
       <div class="inner">
         <h3>{{ $count}}</h3>
 
-        <p>Data yang mengajukan</p>
+        <p>Data Masuk</p>
       </div>
       <div class="icon">
         <i class="ion ion-stats-bars"></i>
@@ -39,14 +39,14 @@
     <!-- small box -->
     <div class="small-box bg-warning">
       <div class="inner">
-        <h3>{{ $user }}</h3>
+        <h3>Profil User</h3>
 
-        <p>Data User</p>
+        <p>Profil</p>
       </div>
       <div class="icon">
         <i class="nav-icon fas fa-ellipsis-h"></i>
       </div>
-      <a href="#" class="small-box-footer">Lihat Data User<i class="fas fa-arrow-circle-right"></i></a>
+      <a href="#" class="small-box-footer">Profil<i class="fas fa-arrow-circle-right"></i></a>
     </div>
   </div>  
 </div>

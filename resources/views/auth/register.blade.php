@@ -101,9 +101,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="form-group mb-5">
                 <label for="password-confirm">Confirm Password</label>
                 <input type="password" class="form-control form-control-border border-width-2" id="password-confirm" placeholder="Confirm Password"  name="password_confirmation" required autocomplete="new-password">
-               
               </div>
-              
+                          
               <div class="text-center">
                 <button type="submit" class="btn btn-primary" style="border-radius: 18px">&nbsp; Daftar &nbsp;<i class="fas fa-sign-in-alt"></i></button>
               </div>

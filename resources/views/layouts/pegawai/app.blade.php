@@ -39,7 +39,7 @@
   @include('layouts.navbar')
 
   <!-- Sidebar -->
-  @include('layouts.admin.sidebar')
+  @include('layouts.pegawai.sidebar')
   
 
   <!-- Content Wrapper. Contains page content -->

@@ -15,46 +15,38 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         
-        <li class="nav-header">Dashboard</li>
-        <li class="nav-item">
-          <a href="{{ route('admin')}}" class="nav-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Dashboard
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ route('admin.periode')}}" class="nav-link">
-            <i class="far fa-calendar"></i>
-            <p>
-              Priode Penilaian
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ route('admin.dataMasuk')}}" class="nav-link">
-            <i class="fas fa-chart-bar"></i>
-            <p>
-              Data Masuk
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ route('admin.dataUser')}}" class="nav-link">
-            <i class="fas fa-user"></i>
-            <p>
-              Daftar Pengguna
-            </p>
-          </a>
-        </li>
-        <li class="nav-header">Profil</li>
-        <li class="nav-item">
-          <a href="iframe.html" class="nav-link">
-            <i class="nav-icon fas fa-ellipsis-h"></i>
-            <p>Profil</p>
-          </a>
-        </li>
+             <li class="nav-header">Dashboard</li>
+             <li class="nav-item">
+               <a href=" {{ route('pegawai')}}" class="nav-link">
+                 <i class="nav-icon fas fa-tachometer-alt"></i>
+                 <p>
+                   Dashboard
+                 </p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="{{ route('pegawai.periode')}}" class="nav-link">
+                 <i class="far fa-calendar"></i>
+                 <p>
+                   Priode Penilaian
+                 </p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="{{ route('pegawai.dataMasuk')}}" class="nav-link">
+                 <i class="fas fa-chart-bar"></i>
+                 <p>
+                   Data Masuk
+                 </p>
+               </a>
+             </li>
+             <li class="nav-header">Profil</li>
+             <li class="nav-item">
+               <a href="iframe.html" class="nav-link">
+                 <i class="nav-icon fas fa-ellipsis-h"></i>
+                 <p>Profil</p>
+               </a>
+             </li>
         <li class="nav-header">Keluar</li>
         <li class="nav-item">
           <a  href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();

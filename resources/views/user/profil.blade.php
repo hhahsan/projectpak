@@ -31,18 +31,20 @@
           </div>
           <div class="card-footer">
             <div class="text-right">
-              @if (!empty($profil))
+             
+
+
+              @endif
+              @if ($profil == !null)
               <a href="{{ route('profil.edit', $item->id )}}" class="btn btn-primary">
                 <i class="fas fa-user"></i> Edit Profil
               </a>
-              @endif
-              @endif
-              @endforeach
-              @if (empty($profil))
+              @elseif ($profil == null)
               <a href="{{ route('profil.isi')}}" class="btn btn-success mb-3">
                 <i class="fas fa-user"></i> Isi Profil
               </a>
               @endif
+              @endforeach
               
              
             </div>

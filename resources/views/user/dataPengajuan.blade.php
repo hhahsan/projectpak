@@ -13,7 +13,7 @@
           <thead>
             <tr>
               <th>No</th>
-              <th>Nama</th>
+              <th>NIP</th>
               <th>Masa Penilaian</th>
               <th>Status</th>
               <th class="text-center">Aksi</th>
@@ -29,7 +29,15 @@
               <td>1</td>
               <td>{{ $data->user->nip}}</td>
               <td>{{ $data->periode->periode}}</td>
-              <td><span class="badge badge-success">Diterima</span></td>
+              <td>
+                @if ($data->status == 1)
+                <span class="badge badge-success">Diterima</span>
+                @elseif ($data->status == 2)
+                <span class="badge badge-danger">Ditolak</span>
+                @elseif ($data->status == null)
+                <span class="badge badge-info">Belum di Validasi</span>
+                @endif
+              </td>
               <td class="text-center"> 
                 <a href="{{ route('user.detail', $data->id )}}" type="button" class="btn btn-info btn-sm" style="border-radius: 8px"><i class="fas fa-info"></i> Detail</a>
                 ||

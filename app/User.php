@@ -10,28 +10,14 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public function get_user_id()
-    {
-        $level = \App\Level::where('nama' , 'guru')->first();
-        return $level->id;
-    }
 
-    public static function boot()
-    {
-        parent::boot();
-
-        static::creating(function($model){
-            $model->level_id = $model->get_user_id();
-        });
-
-    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'nip', 'email', 'password',
+        'nip', 'email', 'password','level_id'
     ];
 
     /**

@@ -24,6 +24,12 @@ class LevelSeeder extends Seeder
                 'nama'          => 'guru',
                 'created_at'    => now(),
                 'updated_at'    => now()
+            ],
+            [
+                
+                'nama'          => 'pegawai',
+                'created_at'    => now(),
+                'updated_at'    => now()
             ]
         ]);
     }
