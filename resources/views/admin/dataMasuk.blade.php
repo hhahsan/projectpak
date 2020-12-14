@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="row">
@@ -6,7 +6,7 @@
     
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">DataTable with default features</h3>
+        <h3 class="card-title">Data Masuk</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
@@ -38,9 +38,9 @@
               @endif
             </td>
             <td>
-              <a href="{{ route('pegawai.detailData', $data->id )}}" type="button" class="btn btn-info btn-sm" style="border-radius: 8px"><i class="fas fa-info"></i> Detail</a>
-              ||
-              <a href="{{ route('pegawai.validasi', $data->id )}}" type="button" class="btn btn-info btn-sm" style="border-radius: 8px"><i class="fas fa-info"></i> Validasi</a>
+              <a href="{{ route('admin.detailData', $data->id )}}" type="button" class="btn btn-info btn-sm" style="border-radius: 8px"><i class="fas fa-info"></i> Detail</a>
+              &nbsp; || &nbsp;
+              <a href="{{ route('admin.validasi', $data->id )}}" type="button" class="btn btn-success btn-sm" style="border-radius: 8px"><i class="fas fa-check"></i> Validasi</a>
             </td>
           </tr>
           </tbody>

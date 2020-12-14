@@ -71,6 +71,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <hr>
               </div>
               
+              
+              <div class="form-group"> 
+                <div class="card-body">
+                  <label for="exampleInputBorder">Nama Lengkap</code></label>
+                  <div class="row">
+                    <div class="col-3">
+                      <input type="text" class="form-control form-control-border border-width-2" name="gelar_depan" placeholder="Gelar Depan">
+                    </div>
+                    <div class="col-6">
+                      <input type="text" class="form-control form-control-border border-width-2" name="nama" placeholder="Nama Lengkap">
+                    </div>
+                    <div class="col-3">
+                      <input type="text" class="form-control form-control-border border-width-2" name="gelar_belakang" placeholder="Gelar Belakang"> 
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="form-group">
                 <label for="nip">NIP</label>
                 <input type="text" class="form-control form-control-border border-width-2 @error('nip') is-invalid @enderror" id="nip" placeholder="NIP"  name="nip" value="{{ old('nip') }}" required autocomplete="nip" autofocus>
@@ -79,7 +96,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
-                </div>
+              </div>
               <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control form-control-border border-width-2 @error('email') is-invalid @enderror" id="email" placeholder="Email"  name="email" value="{{ old('email') }}" required autocomplete="email">

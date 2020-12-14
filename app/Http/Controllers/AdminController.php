@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function index()
     {
         return view('admin.dashboard',[
@@ -73,6 +78,9 @@ class AdminController extends Controller
     public function storeUser(Request $request)
     {
         $user = new User();
+        $user->gelar_depan = $request->gelar_depan;
+        $user->nama = $request->nama;
+        $user->gelar_belakang = $request->gelar_belakang;
         $user->nip = $request->nip;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
@@ -97,7 +105,10 @@ class AdminController extends Controller
     public function updateUser(Request $request, $id)
     {
         $user = User::find($id);
-        $user->nip = $request->nip;
+        $user->gelar_depan = $request->gelar_depan;
+        $user->nama = $request->nama;
+        $user->gelar_belakang = $request->gelar_belakang;
+        $user->email = $request->email;
         $user->password = Hash::make($request->password);
 
         $user->update();

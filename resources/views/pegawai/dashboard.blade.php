@@ -1,4 +1,4 @@
-@extends('layouts.pegawai.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="row">
@@ -13,7 +13,7 @@
       <div class="icon">
         <i class="ion ion-stats-bars"></i>
       </div>
-      <a href="#" class="small-box-footer">Lihat data masuk <i class="fas fa-arrow-circle-right"></i></a>
+      <a href="{{ route('pegawai.dataMasuk')}}" class="small-box-footer">Lihat data masuk <i class="fas fa-arrow-circle-right"></i></a>
     </div>
   </div>
   <!-- ./col -->
@@ -31,7 +31,7 @@
       <div class="icon">
         <i class="ion ion-calendar"></i>
       </div>
-      <a href="#" class="small-box-footer">Ubah Periode Penilaian <i class="fas fa-arrow-circle-right"></i></a>
+      <a href="{{ route('pegawai.periode')}}" class="small-box-footer">Ubah Periode Penilaian <i class="fas fa-arrow-circle-right"></i></a>
     </div>
   </div>
   <!-- ./col -->
@@ -46,7 +46,7 @@
       <div class="icon">
         <i class="nav-icon fas fa-ellipsis-h"></i>
       </div>
-      <a href="#" class="small-box-footer">Profil<i class="fas fa-arrow-circle-right"></i></a>
+      <a href="{{route('profil')}}" class="small-box-footer">Profil<i class="fas fa-arrow-circle-right"></i></a>
     </div>
   </div>  
 </div>

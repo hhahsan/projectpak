@@ -1,4 +1,4 @@
-@extends('layouts.pegawai.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="row">
@@ -39,8 +39,8 @@
             </td>
             <td>
               <a href="{{ route('pegawai.detailData', $data->id )}}" type="button" class="btn btn-info btn-sm" style="border-radius: 8px"><i class="fas fa-info"></i> Detail</a>
-              ||
-              <a href="{{ route('pegawai.validasi', $data->id )}}" type="button" class="btn btn-info btn-sm" style="border-radius: 8px"><i class="fas fa-info"></i> Validasi</a>
+              &nbsp; || &nbsp;
+              <a href="{{ route('pegawai.validasi', $data->id )}}" type="button" class="btn btn-success btn-sm" style="border-radius: 8px"><i class="fas fa-check"></i> Validasi</a>
             </td>
           </tr>
           </tbody>

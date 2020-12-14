@@ -27,6 +27,13 @@
 //   return view('pegawai.validasi');
 // });
 
+
+Route::get('/', 'HomeController@index')->name('index');
+
+Auth::routes();
+
+
+
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/admin/data-masuk', 'AdminController@dataMasuk')->name('admin.dataMasuk');
 Route::get('/admin/data-masuk/detail/{id}','AdminController@show')->name('admin.detailData');
@@ -61,9 +68,3 @@ Route::get('/data-pengajuan','PengajuanController@dataPengajuan')->name('user.da
 Route::get('/detail-pengajuan/{id}','PengajuanController@show')->name('user.detail');
 Route::get('/tambah-pengajuan','PengajuanController@create')->name('user.tambahPengajuan');
 Route::post('/pengajuan','PengajuanController@store')->name('guru.store');
-
-Route::get('/', 'HomeController@index')->name('welcome');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

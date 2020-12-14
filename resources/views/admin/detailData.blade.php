@@ -1,8 +1,8 @@
-@extends('layouts.pegawai.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="content-header">
-  <a href="{{ route('pegawai.dataMasuk')}}" class="btn btn-danger btn-sm" style="border-radius: 18px"> &nbsp;  Kembali &nbsp; <i class="fas fa-undo"></i></a>
+  <a href="{{ route('admin.dataMasuk')}}" class="btn btn-danger btn-sm" style="border-radius: 18px"> &nbsp;  Kembali &nbsp; <i class="fas fa-undo"></i></a>
 </div>
 <div class="card">
   <div class="card-header">

@@ -17,7 +17,7 @@
               <div class="col-7">
                 @foreach ($profil as $item)
                 @if(auth()->user()->id == $item->user_id)
-                <h3><b>{{ $item->nama }}</b></h3>
+                <h3><b>{{ auth()->user()->nama }}</b></h3>
                 <p class="text-muted"><b>Jenis Kelamin : </b>{{ $item->jenis_kelamin }}</p>
                 <p class="text-muted"><b>Tempat tanggal lahir : </b> {{ $item->tempat_lahir }} / {{ $item->tanggal_lahir }}  </p>
                 <ul class="ml-4 mb-0 fa-ul text-muted">
@@ -31,20 +31,12 @@
           </div>
           <div class="card-footer">
             <div class="text-right">
-             
-
-
-              @endif
-              @if ($profil == !null)
               <a href="{{ route('profil.edit', $item->id )}}" class="btn btn-primary">
                 <i class="fas fa-user"></i> Edit Profil
               </a>
-              @elseif ($profil == null)
-              <a href="{{ route('profil.isi')}}" class="btn btn-success mb-3">
-                <i class="fas fa-user"></i> Isi Profil
-              </a>
+
               @endif
-              @endforeach
+              @endforeach      
               
              
             </div>

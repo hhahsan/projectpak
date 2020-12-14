@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('pegawai');
+    }
+
     public function index()
     {
         $count = Pengajuan::all()->count();

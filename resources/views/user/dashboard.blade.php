@@ -43,7 +43,7 @@
             <h4>Profile</h4>
             <p>Untuk mengubah informasi pribadi seperti nama, nomor telefon, dan informasi pribadi lainnya ada pada halaman profil, dan juga untuk merubah password(kata sandi) terdapat pada halaman ini.</p>
         </div>
-        <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right fa-2x"></i></a>
+        <a href="{{route('profil.isi')}}" class="small-box-footer"><i class="fas fa-arrow-circle-right fa-2x"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -58,7 +58,12 @@
             <h4>Keluar</h4>
             <p>Jika anda sudah merasa cukup dengan proses pengajuan PAK anda hari ini, jangan lipa untuk menutup aplikasi ini dengan menekan tombol menu keluar, agar akun anda tetap aman dan dapat digunakan kembali.</p>
         </div>
-        <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right fa-2x"></i></a>
+        <a  href="{{ route('logout') }}" class="small-box-footer" onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">
+           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
+        <i class="fas fa-arrow-circle-right fa-2x"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -70,10 +75,13 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">Periode Penilaian</h4>
             </div>
             <div class="modal-body">
-                <p>Some text in the modal.</p>
+              @foreach ($periode as $p)
+                <h3>{{ $p->periode }}</h3>
+              @endforeach
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

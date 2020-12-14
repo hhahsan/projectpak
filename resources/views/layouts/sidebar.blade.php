@@ -1,9 +1,9 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="{{route('user.dashboard')}}" class="brand-link">
+  <h3  class="brand-link">
     <span class="brand-text font-weight-light">SIP PAK guru</span>
-  </a>
+  </h3>
 
   <!-- Sidebar -->
   <div class="sidebar">
@@ -15,6 +15,68 @@
              with font-awesome or any other icon font library -->
         
         <li class="nav-header">Dashboard</li>
+
+        @if (Auth::user()->level_id == '1')
+        <li class="nav-item">
+          <a href="{{ route('admin')}}" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Dashboard
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('admin.periode')}}" class="nav-link">
+            <i class="far fa-calendar"></i>
+            <p>
+              Priode Penilaian
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('admin.dataMasuk')}}" class="nav-link">
+            <i class="fas fa-chart-bar"></i>
+            <p>
+              Data Masuk
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('admin.dataUser')}}" class="nav-link">
+            <i class="fas fa-user"></i>
+            <p>
+              Daftar Pengguna
+            </p>
+          </a>
+        </li>
+        @endif
+        @if (Auth::user()->level_id == '3')
+        <li class="nav-item">
+          <a href=" {{ route('pegawai')}}" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Dashboard
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('pegawai.periode')}}" class="nav-link">
+            <i class="far fa-calendar"></i>
+            <p>
+              Priode Penilaian
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('pegawai.dataMasuk')}}" class="nav-link">
+            <i class="fas fa-chart-bar"></i>
+            <p>
+              Data Masuk
+            </p>
+          </a>
+        </li>
+        @endif
+        @if (Auth::user()->level_id == '2')
         <li class="nav-item">
           <a href="{{route('user.dashboard')}}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -39,6 +101,7 @@
             </p>
           </a>
         </li>
+        @endif
         <li class="nav-header">Profil</li>
         <li class="nav-item">
           <a href="{{route('profil')}}" class="nav-link">

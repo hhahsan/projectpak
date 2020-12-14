@@ -16,7 +16,8 @@ class PengajuanController extends Controller
 
     public function index()
     {
-        return view('user.dashboard');
+        $periode = Periode::orderBy('id','desc')->limit('1')->get();
+        return view('user.dashboard',compact('periode'));
     }
 
     public function show($id)

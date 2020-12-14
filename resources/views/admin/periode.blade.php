@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="col-md-6">
@@ -8,7 +8,7 @@
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form method="POST" action="{{ route('pegawai.store')}}" class="form-horizontal">
+    <form method="POST" action="{{ route('admin.store')}}" class="form-horizontal">
       @csrf
       <div class="card-body">
         <div class="form-group text-center">
@@ -17,7 +17,7 @@
         <div class="form-group row">
           <label for="inputPassword3" class="col-sm-2 col-form-label">Tanggal</label>
           <div class="col-sm-10 input-group date">
-            <input name="periode" type="text" class="date form-control" data-target="#reservationdate"/>
+            <input name="periode" type="text" class="date form-control" data-target="#reservationdate" autocomplete="off"/>
               <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
               </div>

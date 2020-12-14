@@ -28,9 +28,6 @@ class profilController extends Controller
     {
         $profil = new Profil;
         $profil->user_id = auth()->id();
-        $profil->gelar_depan = $request->gelar_depan;
-        $profil->nama = $request->nama;
-        $profil->gelar_belakang = $request->gelar_belakang;
         $profil->no_telephone = $request->no_telephone;
         $profil->alamat = $request->alamat;
         $profil->tempat_lahir = $request->tempat_lahir;
@@ -51,9 +48,6 @@ class profilController extends Controller
     {
         $profil = Profil::find($id);
         $profil->user_id = auth()->id();
-        $profil->gelar_depan = $request->gelar_depan;
-        $profil->nama = $request->nama;
-        $profil->gelar_belakang = $request->gelar_belakang;
         $profil->no_telephone = $request->no_telephone;
         $profil->alamat = $request->alamat;
         $profil->tempat_lahir = $request->tempat_lahir;

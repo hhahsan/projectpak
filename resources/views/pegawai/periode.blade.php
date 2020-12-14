@@ -1,4 +1,4 @@
-@extends('layouts.pegawai.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="col-md-6">

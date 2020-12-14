@@ -11,23 +11,6 @@
         <small class="text-success">Silahkan mengisi profil anda sesuai form yang ada</small>
         <hr>
       </div>
-    
-      <div class="form-group"> 
-        <div class="card-body">
-          <label for="exampleInputBorder">Nama Lengkap</code></label>
-          <div class="row">
-            <div class="col-3">
-              <input type="text" class="form-control form-control-border border-width-2" name="gelar_depan" placeholder="Gelar Depan" value="{{ $profil->gelar_depan}}">
-            </div>
-            <div class="col-6">
-              <input type="text" class="form-control form-control-border border-width-2" name="nama" placeholder="Nama Lengkap" value="{{ $profil->nama}}">
-            </div>
-            <div class="col-3">
-              <input type="text" class="form-control form-control-border border-width-2" name="gelar_belakang" placeholder="Gelar Belakang" value="{{ $profil->gelar_belakang}}"> 
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="form-group">
         <label for="notelp">No Telepon</label>
         <input type="text" class="form-control form-control-border border-width-2" id="notelp" name="no_telephone" placeholder="No Telepon" value="{{ $profil->no_telephone}}">
