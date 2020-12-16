@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Pengajuan;
 use App\Periode;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
@@ -15,7 +16,7 @@ class PegawaiController extends Controller
 
     public function index()
     {
-        $count = Pengajuan::all()->count();
+      
         return view('pegawai.dashboard',[
             'periode' => Periode::orderBy('id','desc')->limit('1')->get(),
             'count' => Pengajuan::all()->count(),
@@ -24,8 +25,13 @@ class PegawaiController extends Controller
 
     public function dataMasuk()
     {
-        $datas = Pengajuan::with(['user','periode.pengajuan'])->get();
-        return view('pegawai.dataMasuk',compact('datas'));
+        $no =0;
+        $datas = DB::table('pengajuan')
+        ->join('users','pengajuan.user_id','=','users.id') 
+        ->join('periode','pengajuan.periode_id','=','periode.id')
+        ->join('profil','pengajuan.user_id','=','profil.user_id')
+        ->get();
+        return view('pegawai.dataMasuk',compact('no','datas'));
     }
 
     public function create()

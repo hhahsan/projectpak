@@ -28,11 +28,12 @@ class PengajuanController extends Controller
 
     public function dataPengajuan()
     {
-    
+
+        $no = 0;                                                            
         $datas = Pengajuan::with(['user.profil','periode.pengajuan'])->get();
         
 
-        return view('user.dataPengajuan',compact('datas'));
+        return view('user.dataPengajuan',compact('no','datas'));
     }
 
     public function create()

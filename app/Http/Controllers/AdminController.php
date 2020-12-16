@@ -7,6 +7,7 @@ use App\Periode;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -26,14 +27,27 @@ class AdminController extends Controller
 
     public function dataMasuk()
     {
-        $datas = Pengajuan::with(['user','periode.pengajuan'])->get();
-        return view('admin.dataMasuk',compact('datas'));
+        $no =0;
+        $datas = DB::table('pengajuan')
+        ->join('users','pengajuan.user_id','=','users.id') 
+        ->join('periode','pengajuan.periode_id','=','periode.id')
+        ->join('profil','pengajuan.user_id','=','profil.user_id')
+        ->get();
+        return view('admin.dataMasuk',compact('no','datas'));
+    }
+
+    public function dataDestroy($id)
+    {
+        $data = Pengajuan::find($id);
+        $data->delete();
+        return redirect('/admin/data-masuk');
     }
 
     public function create()
     {
         return view('admin.periode');
     }
+
     public function store(Request $request)
     {
         $periode = new Periode;
@@ -41,7 +55,7 @@ class AdminController extends Controller
 
         $periode->save();
         return redirect('/admin');
-        
+
     }
 
     public function show($id)
@@ -66,9 +80,10 @@ class AdminController extends Controller
 
     public function dataUser()
     {
+        $no = 0;
         $users = User::all();
 
-        return view('admin.dataPengguna', compact('users'));
+        return view('admin.dataPengguna', compact('no','users'));
     }
 
     public function createUser()

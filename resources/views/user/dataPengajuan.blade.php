@@ -26,7 +26,7 @@
             @foreach ($datas as $data)
             @if(auth()->user()->id == $data->user_id)
             <tr>
-              <td>1</td>
+              <td>{{++$no}}</td>
               <td>{{ $data->user->nip}}</td>
               <td>{{ $data->periode->periode}}</td>
               <td>
@@ -40,8 +40,6 @@
               </td>
               <td class="text-center"> 
                 <a href="{{ route('user.detail', $data->id )}}" type="button" class="btn btn-info btn-sm" style="border-radius: 8px"><i class="fas fa-info"></i> Detail</a>
-                ||
-                <a href="#" type="button" class="btn btn-primary btn-sm" style="border-radius: 8px"><i class="fas fa-print"></i> Cetak</a>
               </td>
             </tr>
             @endif

@@ -13,6 +13,14 @@
     <table class="table table-hover text-nowrap">
       <tbody>
         <tr>
+          <th>Nama</th>
+          <td>{{ $data->user->nama}}</td>
+        </tr> 
+        <tr>
+          <th>NIP</th>
+          <td>{{ $data->user->nip}}</td>
+        </tr> 
+        <tr>
           <th>Pendidikan Terakhir</th>
           <td>{{ $data->pendidikan_terakhir}}</td>
         </tr> 

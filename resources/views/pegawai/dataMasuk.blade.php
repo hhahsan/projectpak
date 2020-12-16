@@ -6,7 +6,7 @@
     
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">DataTable with default features</h3>
+        <h3 class="card-title">Data Masuk</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
@@ -14,9 +14,20 @@
           <thead>
           <tr>
             <th>No</th>
+            <th hidden>awal penilaian</th>
+            <th>Periode Penilaian</th>
             <th>Nama</th>
             <th>Nip</th>
-            <th>Periode Penilaian</th>
+            <th hidden>tempat tanggal lahir</th>
+            <th hidden>jenis kelamin</th>
+            <th hidden>Pendidikan</th>
+            <th hidden>Pangkat dan Golongan</th>
+            <th hidden>TMT Pangkat dan Golongan</th>
+            <th hidden>Masa Kerja Golongan Lama @Tahun</th>
+            <th hidden>Masa Kerja Golongan Lama @Bulan</th>
+            <th hidden>Jenis Guru</th>
+            <th hidden>Tugas</th>
+            <th hidden>Alamat Sekolah</th>
             <th>Status</th>
             <th>Aksi</th>
           </tr>
@@ -24,10 +35,21 @@
           @foreach ($datas as $data)
           <tbody>
           <tr>
-            <td>1</td>
-            <td>{{ $data->user->nama }}</td>
-            <td>{{ $data->user->nip}}</td>
-            <td>{{ $data->periode->periode}}</td>
+            <td>{{++$no}}</td>
+            <td hidden>{{ $data->awal_penilaian }}</td>
+            <td>{{ $data->periode}}</td>
+            <td>{{ $data->nama }}</td>
+            <td>{{ $data->nip}}</td>
+            <td hidden>{{$data->tempat_lahir}} {{$data->tanggal_lahir}}</td>
+            <td hidden>{{$data->jenis_kelamin}}</td>
+            <td hidden>{{ $data->pendidikan_terakhir}} {{$data->jurusan}} {{$data->tahun_lulus}}</td>
+            <td hidden>{{$data->pangkat_golongan}}</td>
+            <td hidden>{{$data->tmt}}</td>
+            <td hidden>{{$data->gol_tahun}}</td>
+            <td hidden>{{$data->gol_bulan}}</td>
+            <td hidden>{{$data->jenis_guru}}</td>
+            <td hidden>{{$data->tugas}}</td>
+            <td hidden>{{$data->alamat_sekolah}} {{$data->kec_sekolah}} {{$data->kab_sekolah}}</td>
             <td>
               @if ($data->status == 1)
               <span class="badge badge-success">Diterima</span>

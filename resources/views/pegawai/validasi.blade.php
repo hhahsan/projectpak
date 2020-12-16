@@ -14,6 +14,14 @@
   
       <tbody>
         <tr>
+          <th>Nama</th>
+          <td>{{ $validasi->user->nama}}</td>
+        </tr> 
+        <tr>
+          <th>NIP</th>
+          <td>{{ $validasi->user->nip}}</td>
+        </tr> 
+        <tr>
           <th>Pendidikan Terakhir</th>
           <td>{{ $validasi->pendidikan_terakhir}}</td>
         </tr> 

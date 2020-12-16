@@ -24,7 +24,7 @@
           @foreach ($users as $user)
           <tbody>
             <tr>
-              <td>1</td>
+              <td>{{++$no}}</td>
               <td>{{ $user->gelar_depan}} {{ $user->nama}} {{ $user->gelar_belakang}}</td>
               <td>{{ $user->nip}}</td>
               <td>{{ $user->level->nama}}</td>

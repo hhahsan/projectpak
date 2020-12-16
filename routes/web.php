@@ -39,6 +39,7 @@ Route::get('/admin/data-masuk', 'AdminController@dataMasuk')->name('admin.dataMa
 Route::get('/admin/data-masuk/detail/{id}','AdminController@show')->name('admin.detailData');
 Route::get('/admin/periode', 'AdminController@create')->name('admin.periode');
 Route::get('/admin/data-masuk/validasi/{id}','AdminController@edit')->name('admin.validasi');
+Route::get('/admin/delete/{id}','AdminController@dataDestroy')->name('admin.dataDestroy');
 Route::post('/admin/periode', 'AdminController@store')->name('admin.store');
 Route::put('/admin/data-masuk/validasi/{id}', 'AdminController@update')->name('admin.update');
 Route::get('/admin/data-user','AdminController@dataUser')->name('admin.dataUser');
