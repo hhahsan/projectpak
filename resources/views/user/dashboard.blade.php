@@ -67,7 +67,25 @@
       </div>
     </div>
     <!-- ./col -->
+</div>
+<div class="row">
+  <div class="col-md-6">
+    
+      
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h3><i class="icon fas fa-ban"></i> PENTING!</h3>
+          <hr>
+         Sebelum melakukan pengisian pengajuan data PAK, anda harus mengisi profil dengan menekan tombol profil pada card yang ada di atas
+      </div>
+      <!-- /.card-body -->
+   
   </div>
+  <!-- /.col -->
+</div>
+<!-- /.row -->
 
 <!--Modal Periode -->
 <div id="myModal" class="modal fade" role="dialog">
