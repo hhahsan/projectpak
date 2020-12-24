@@ -91,6 +91,8 @@
 <script src="{{ asset ('adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{ asset ('adminlte/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+<!-- bs-custom-file-input -->
+<script src="{{ asset ('adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <!-- daterangepicker -->
 <script src="{{ asset ('adminlte/plugins/moment/moment.min.js') }}"></script>
 <script src="{{ asset ('adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
@@ -131,6 +133,11 @@
 <script>
   $('#myModal').modal('show');
 </script>
+<script>
+  $(function () {
+    bsCustomFileInput.init();
+  });
+  </script>
 <script>
   $(function () {
     $("#example1").DataTable({

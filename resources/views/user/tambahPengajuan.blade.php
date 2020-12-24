@@ -4,7 +4,7 @@
 <div class="card card-primary">
     <!-- /.card-header -->
   <!-- form start -->
-  <form method="POST" action="{{ route('guru.store')}}" role="form">
+  <form method="POST" action="{{ route('guru.store')}}" role="form" enctype="multipart/form-data">
     @csrf
     
     <div class="card-body">
@@ -13,7 +13,16 @@
         <small class="text-success">Silahkan Mengisi Data Sesuai Isian</small>
         <hr>
       </div>
-      
+      <div class="form-group">
+        <label for="exampleInputFile">Rekomendasi Kepala Sekolah</label>
+        <div class="input-group">
+          <div class="custom-file">
+            <input name="file" type="file" class="custom-file-input" id="exampleInputFile">
+            <label class="custom-file-label" for="exampleInputFile">Pilih file</label>
+          </div>
+        </div>
+      </div>
+      <br>
       <div class="form-group">
         @foreach ($periode as $item)
         <input name="periode_id" type="text" class="form-control form-control-border border-width-2" value="{{ $item->id }}" hidden>

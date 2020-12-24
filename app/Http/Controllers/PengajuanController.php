@@ -23,6 +23,7 @@ class PengajuanController extends Controller
     public function show($id)
     {
         $detail = Pengajuan::find($id);
+        
         return view('user.detail',compact('detail'));
     }
 
@@ -63,6 +64,11 @@ class PengajuanController extends Controller
         $pengajuan->alamat_sekolah = $request->alamat_sekolah;
         $pengajuan->kec_sekolah = $request->kec_sekolah;
         $pengajuan->kab_sekolah = $request->kab_sekolah;
+        
+        $file = $request->file;
+        $filename = time(). '.' .$file->getClientOriginalExtension();
+        $file->move('pengantar/', $filename);
+        $pengajuan->file = $filename;
 
         $pengajuan->save();
         return redirect('/data-pengajuan');

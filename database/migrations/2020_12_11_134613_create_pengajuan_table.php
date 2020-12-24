@@ -21,20 +21,21 @@ class CreatePengajuanTable extends Migration
             $table->unsignedBigInteger('periode_id');
             $table->foreign('periode_id')
             ->references('id')->on('periode')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('pendidikan_terakhir')->nullable();
-            $table->string('jurusan')->nullable();
+            $table->string('pendidikan_terakhir', 15)->nullable();
+            $table->string('jurusan', 50)->nullable();
             $table->string('tahun_lulus', 10)->nullable();
-            $table->string('pangkat_golongan')->nullable();
+            $table->string('pangkat_golongan',50)->nullable();
             $table->date('tmt')->nullable();
-            $table->string('gol_bulan')->nullable();
-            $table->string('gol_tahun')->nullable();
+            $table->string('gol_bulan', 15)->nullable();
+            $table->string('gol_tahun', 15)->nullable();
             $table->date('awal_penilaian')->nullable();
-            $table->string('jenis_guru')->nullable();
-            $table->string('tugas')->nullable();
-            $table->string('alamat_sekolah')->nullable();
-            $table->string('kec_sekolah')->nullable();
-            $table->string('kab_sekolah')->nullable();
+            $table->string('jenis_guru', 30)->nullable();
+            $table->string('tugas', 30)->nullable();
+            $table->string('alamat_sekolah', 30)->nullable();
+            $table->string('kec_sekolah', 30)->nullable();
+            $table->string('kab_sekolah', 30)->nullable();
             $table->integer('status')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

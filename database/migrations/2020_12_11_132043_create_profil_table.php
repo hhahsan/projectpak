@@ -19,10 +19,10 @@ class CreateProfilTable extends Migration
             $table->foreign('user_id')
             ->references('id')->on('users')
             ->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('no_telephone')->lenght(10)->nullable()->unsigned();
+            $table->integer('no_telephone')->lenght(13)->nullable()->unsigned();
             $table->text('alamat')->nullable();
-            $table->string('jenis_kelamin')->nullable();
-            $table->string('tempat_lahir')->nullable();
+            $table->string('jenis_kelamin', 25)->nullable();
+            $table->string('tempat_lahir', 30)->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->timestamps();
         });
