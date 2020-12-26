@@ -59,7 +59,13 @@
         <tr>
           <th>Alamat Sekolah</th>
           <td>{{ $data->alamat_sekolah}} Kecamatan {{ $data->kec_sekolah}} Kabupaten {{ $data->kab_sekolah}} </td>
-        </tr>         
+        </tr> 
+        <tr>
+          <th>Surat Rekomendasi Kepala Sekolah</th>  
+          <div>
+            <td><iframe src="{{ url('pengantar/'.$data->file) }}"></iframe></td>
+          </div>
+        </tr>          
               
       
       </tbody>

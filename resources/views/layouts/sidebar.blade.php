@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar elevation-4 sidebar-light-lightblue">
   <!-- Brand Logo -->
-  <h3  class="brand-link navbar-lightblue">
+  <h3  class="brand-link navbar-dark navbar-lightblue">
     <span class="brand-text font-white">SIP PAK guru</span>
   </h3>
 

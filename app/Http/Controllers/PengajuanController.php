@@ -23,7 +23,6 @@ class PengajuanController extends Controller
     public function show($id)
     {
         $detail = Pengajuan::find($id);
-        
         return view('user.detail',compact('detail'));
     }
 
@@ -47,6 +46,21 @@ class PengajuanController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'pendidikan_terakhir'   => 'required',
+            'jurusan'               => 'required',
+            'tahun_lulus'           => 'required',
+            'pangkat_golongan'      => 'required',
+            'tmt'                   => 'required|date',
+            'gol_tahun'             => 'required|max:2',
+            'gol_bulan'             => 'required|max:2',
+            'awal_penilaian'        => 'required|date',
+            'jenis_guru'            => 'required',
+            'tugas'                 => 'required',
+            'alamat_sekolah'        => 'required',
+            'kec_sekolah'           => 'required',
+            'kab_sekolah'           => 'required',
+        ]);
         
         $pengajuan = new Pengajuan;
         $pengajuan->user_id = auth()->id();
@@ -69,7 +83,7 @@ class PengajuanController extends Controller
         $filename = time(). '.' .$file->getClientOriginalExtension();
         $file->move('pengantar/', $filename);
         $pengajuan->file = $filename;
-
+        
         $pengajuan->save();
         return redirect('/data-pengajuan');
     }
