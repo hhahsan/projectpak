@@ -17,7 +17,7 @@
         <label for="exampleInputFile">Rekomendasi Kepala Sekolah</label>
         <div class="input-group">
           <div class="custom-file">
-            <input name="file" type="file" class="custom-file-input" id="exampleInputFile">
+            <input name="file" type="file" class="custom-file-input" id="exampleInputFile" required>
             <label class="custom-file-label" for="exampleInputFile">Pilih file</label>
           </div>
         </div>
@@ -30,7 +30,7 @@
       </div>
       <div class="form-group">
         <label for="pendidikanTerakhir">Pendidikan Terakhir</label>
-        <select name="pendidikan_terakhir" class="custom-select form-control-border border-width-2" id="pendidikanTerakhir">
+        <select name="pendidikan_terakhir" class="custom-select form-control-border border-width-2" id="pendidikanTerakhir" required>
           <option disabled selected>-- Pendidikan terakhir --</option>
           <option value="Tidak Sekolah">Tidak Sekolah</option>
           <option value="PAUD">PAUD</option>
@@ -54,15 +54,15 @@
       </div>
       <div class="form-group">
         <label for="pendidikanJurusan">Pendidikan Jurusan</label>
-        <input name="jurusan" type="text" class="form-control form-control-border border-width-2" id="pendidikanJurusan" placeholder="Pendidikan Jurusan">
+        <input name="jurusan" type="text" class="form-control form-control-border border-width-2" id="pendidikanJurusan" placeholder="Pendidikan Jurusan" required>
       </div>
       <div class="form-group">
         <label for="tahunLulus">Tahun Lulus</label>
-        <input name="tahun_lulus" type="text" class="form-control form-control-border border-width-2" id="tahunLulus" placeholder="Tahun Lulus">
+        <input name="tahun_lulus" type="text" class="form-control form-control-border border-width-2" id="tahunLulus" placeholder="Tahun Lulus" required>
       </div>
       <div class="form-group">
         <label for="pangkat">Pangkat & Golongan</label>
-        <select name="pangkat_golongan" class="custom-select form-control-border border-width-2" id="pangkat">
+        <select name="pangkat_golongan" class="custom-select form-control-border border-width-2" id="pangkat" required>
           <option>-- Pangkat & Golongan --</option>
           <option value="Pengatur Muda - II/a">Pengatur Muda - II/a</option>
           <option value="Pengatur Muda Tk.I - II/b">Pengatur Muda Tk.I - II/b</option>
@@ -79,7 +79,7 @@
       <div class="form-group">
         <label for="tmt">TMT Pangkat & Golongan</label>
         <div class="input-group date" id="reservationdate" data-target-input="nearest">
-          <input name="tmt" type="text" class="date form-control form-control-border border-width-2" id="tmt" placeholder="TMT Pangkat & Golongan">
+          <input name="tmt" type="text" class="date form-control form-control-border border-width-2" id="tmt" placeholder="TMT Pangkat & Golongan" required>
           <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
           </div>
         </div>
@@ -88,24 +88,24 @@
         <label for="tahunLulus">Masa Kerja Golongan</label>
         <div class="row">
             <div class="col-3">
-              <input name="gol_tahun" type="text" class="form-control form-control-border border-width-2" placeholder="--Tahun--">
+              <input name="gol_tahun" type="text" class="form-control form-control-border border-width-2" placeholder="--Tahun--" required>
             </div>
             <div class="col-6">
-              <input name="gol_bulan" type="text" class="form-control form-control-border border-width-2" placeholder="--Bulan--">
+              <input name="gol_bulan" type="text" class="form-control form-control-border border-width-2" placeholder="--Bulan--" required>
             </div>
           </div>
       </div>
       <div class="form-group">
         <label for="penilaian">Masa Penilaian Awal</label>
         <div class="input-group date" id="reservationdate" data-target-input="nearest">
-          <input name="awal_penilaian" type="text" class="date form-control form-control-border border-width-2" id="penilaian" placeholder="Masa Penilaian Awal" autocomplete=’off’>
+          <input name="awal_penilaian" type="text" class="date form-control form-control-border border-width-2" id="penilaian" placeholder="Masa Penilaian Awal" autocomplete=’off’ required>
           <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
           </div>
         </div>
       </div>
       <div class="form-group">
         <label for="jenisGuru">Jenis Guru</label>
-        <select name="jenis_guru" class="custom-select form-control-border border-width-2" id="jenisGuru">
+        <select name="jenis_guru" class="custom-select form-control-border border-width-2" id="jenisGuru" required>
           <option>-- Pangkat & Golongan --</option>
           <option value="Guru Kelas">Guru Kelas</option>
           <option value="Guru Mata Pelajaran">Guru Mata Pelajaran</option>
@@ -120,20 +120,20 @@
       </div>
       <div class="form-group">
         <label for="tugas">Tugas</label>
-        <input name="tugas" type="text" class="form-control form-control-border border-width-2" id="tugas" placeholder="Tugas">
+        <input name="tugas" type="text" class="form-control form-control-border border-width-2" id="tugas" placeholder="Tugas" required>
       </div>
       <div class="form-group">
         <label class="text-center">Almat Sekolah</label> 
         <div class="card-body">
           <div class="row">
             <div class="col-3">
-              <input name="alamat_sekolah" type="text" class="form-control form-control-border border-width-2" placeholder="Sekolah">
+              <input name="alamat_sekolah" type="text" class="form-control form-control-border border-width-2" placeholder="Sekolah" required>
             </div>
             <div class="col-6">
-              <input name="kec_sekolah" type="text" class="form-control form-control-border border-width-2" placeholder="Kecamatan">
+              <input name="kec_sekolah" type="text" class="form-control form-control-border border-width-2" placeholder="Kecamatan" required>
             </div>
             <div class="col-3">
-              <input name="kab_sekolah" type="text" class="form-control form-control-border border-width-2" placeholder="Kabupaten"> 
+              <input name="kab_sekolah" type="text" class="form-control form-control-border border-width-2" placeholder="Kabupaten" required> 
             </div>
           </div>
         </div>

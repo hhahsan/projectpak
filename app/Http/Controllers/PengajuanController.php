@@ -1,11 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Pengajuan;
 use App\Periode;
 use App\User;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class PengajuanController extends Controller
 {
@@ -85,6 +86,8 @@ class PengajuanController extends Controller
         $pengajuan->file = $filename;
         
         $pengajuan->save();
+
+        Alert::success('Berhasil', 'Data berhasil disimpan');
         return redirect('/data-pengajuan');
     }
 }

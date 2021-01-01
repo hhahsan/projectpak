@@ -27,7 +27,7 @@ class profilController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'no_telephone'      => 'required|integer',
+            'no_telephone'      => 'required',
             'alamat'            => 'required',
             'tempat_lahir'      => 'required',
             'tanggal_lahir'     => 'required',

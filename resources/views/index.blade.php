@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Top Navigation</title>
+  <title>SIP PAK Guru</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -71,12 +71,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <p class="card-text">
                     Jika anda sudah mendaftar (memiliki akun), silahkan login dengan akun yang sudah anda daftarkan.
                 </p>
-                
-
               </div>
-              
             <a href="{{ route('login') }}" class="card-footer text-navy">Klik untuk Login  <i class="fas fa-arrow-circle-right"></i></a> 
-    
             </div>
 
             <div class="card mt-5">
@@ -86,7 +82,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <p class="card-text">
                   Jika anda belum pernah mendaftar di aplikasi ini, silahkan mengikuti proses pembuatan akun untuk dapat mengajukan PAK.
                 </p>
-                
               </div>
               <a href="{{ route('register') }}" class="card-footer text-navy">Klik untuk membuat akun  <i class="fas fa-arrow-circle-right"></i></a> 
             </div><!-- /.card -->
